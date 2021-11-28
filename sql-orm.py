@@ -52,7 +52,7 @@ base.metadata.create_all(db)
 # Query 1 - select all records from the "Artist" table
 # artists = session.query(Artist)
 # for artist in artists:
-#     print(artist.ArtistId, artist.Name, sep=" | ")
+#      print(artist.ArtistId, artist.Name, sep=" | ")
 
 # Query 2 - select only the "Name" column from the "Artist" table
 # artists = session.query(Artist)
@@ -64,13 +64,13 @@ base.metadata.create_all(db)
 # print(artist.ArtistId, artist.Name, sep=" | ")
 
 # Query 4 - select only by "ArtistId" #51 from the "Artist" table
-# artist = session.query(Artist).filter_by(ArtistId=51).first()
-# print(artist.ArtistId, artist.Name, sep=" | ")
+artist = session.query(Artist).filter_by(ArtistId=51).first()
+print(artist.ArtistId, artist.Name, sep=" | ")
 
 # Query 5 - select only the albums with "ArtistId" #51 on the "Album" table
-# albums = session.query(Album).filter_by(ArtistId=51)
-# for album in albums:
-#     print(album.AlbumId, album.Title, album.ArtistId, sep=" | ")
+albums = session.query(Album).filter_by(ArtistId=51)
+for album in albums:
+    print(album.AlbumId, album.Title, album.ArtistId, sep=" | ")
 
 # Query 6 - select all tracks where the composer is "Queen" from the "Track" table
 tracks = session.query(Track).filter_by(Composer="Queen")
